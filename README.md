@@ -2,7 +2,7 @@ This set of configs are meant to help [Spinnaker](http://spinnaker.io) developer
 
 Prior to this, a developer would usually have to launch at least one "downstream" service as a dependency of the service he would like to make a change to. With the proper setup, a dev need only run the service-under-development locally.
 
-As with most things in computer science, the solution is to add another layer of indirection. In this case, I'm introducing an `nginx` proxy between all intra-service communication. The `nginx` proxy config defaults to forwarding the request to the service living on the VM. A developer must tweak _which_ service is under development by modifying the `nginx` config to point to a reverse-tunneled port.
+As with most things in computer science, the solution is to add another layer of indirection. In this case, I'm introducing an `nginx` proxy between all inter-service communication. The `nginx` proxy config defaults to forwarding the request to the service living on the VM. A developer must tweak _which_ service is under development by modifying the `nginx` config to point to a reverse-tunneled port.
 
 ### Before
 ![before](./before.png)
