@@ -1,0 +1,30 @@
+services:
+  clouddriver.baseUrl: http://localhost:8000/clouddriver
+  echo.baseUrl: http://localhost:8000/echo
+  fiat.baseUrl: http://localhost:8000/fiat
+  front50.baseUrl: http://localhost:8000/front50
+  igor.baseUrl: http://localhost:8000/igor
+  kayenta.baseUrl: http://localhost:8000/kayenta
+  orca.baseUrl: http://localhost:8000/orca
+  rosco.baseUrl: http://localhost:8000/rosco
+
+clouddriver.baseUrl: ${services.clouddriver.baseUrl}
+oort.baseUrl: ${services.clouddriver.baseUrl}
+mort.baseUrl: ${services.clouddriver.baseUrl}
+kato.baseUrl: ${services.clouddriver.baseUrl}
+echo.baseUrl: ${services.echo.baseUrl}
+fiat.baseUrl: ${services.fiat.baseUrl}
+front50.baseUrl: ${services.front50.baseUrl}
+igor.baseUrl: ${services.igor.baseUrl}
+kayenta.baseUrl: ${services.kayenta.baseUrl}
+orca.baseUrl: ${services.orca.baseUrl}
+rosco.baseUrl: ${services.rosco.baseUrl}
+bakery.baseUrl: ${services.rosco.baseUrl}
+
+
+security:
+  user:
+    password: asdf
+  role: ENDPOINT_ADMIN
+
+management.security.enabled: false
