@@ -4,6 +4,12 @@ Prior to this, a developer would usually have to launch at least one "downstream
 
 As with most solutions in computer science, the solution is to add another layer of indirection. In this case, I'm introducing an `nginx` proxy between all intra-service communication. The `nginx` proxy config defaults to forwarding the request to the service living on the VM. A developer must tweak _which_ service is under development by modifying the `nginx` config to point to a reverse-tunneled port.
 
+### Before
+![before](./before.png)
+
+### After
+![after](./after.png)
+
 ## Prerequisites
 
 1. A remote VM with each of the services running on it. Assuming you're a developer, you probably want the source code versions (as opposed to the pre-built Debian packages). Halyard setup to deploy to a [Local Git](https://www.spinnaker.io/setup/install/environment/#local-git) environment works very nicely to do this.
