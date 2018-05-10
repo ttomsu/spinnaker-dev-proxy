@@ -9,7 +9,7 @@ As with most solutions in computer science, the solution is to add another layer
 1. A remote VM with each of the services running on it. Assuming you're a developer, you probably want the source code versions (as opposed to the pre-built Debian packages). Halyard setup to deploy to a [Local Git](https://www.spinnaker.io/setup/install/environment/#local-git) environment works very nicely to do this.
     > A remote Kubernetes environment would be great for this as well. Unfortunately, `kubectl port-forward` doesn't [yet support reverse port-forwarding](https://github.com/kubernetes/kubernetes/pull/57320), which is needed to make this solution work.
 
-1. Redis installed on your local workstation. While it's possible to port-forward Redis as well, services like Orca and Clouddriver share work by locking specific keys in a shared Redis. To ensure your work is completely contained locally, your local **system-under-development SUD)** should have it's own Redis.
+1. Redis installed on your local workstation. While it's possible to port-forward Redis as well, services like Orca and Clouddriver share work by locking specific keys in a shared Redis. To ensure your work is completely contained locally, your local **system-under-development (SUD)** should have it's own Redis.
 
 ## Setup
 
