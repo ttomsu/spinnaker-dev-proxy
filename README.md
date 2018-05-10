@@ -13,13 +13,13 @@ As with most solutions in computer science, the solution is to add another layer
 
 ## Setup
 
-1. SSH to VM with tunnel options. In GCP, this could look like `gcloud compute ssh my-spinnaker-vm -- -L 8000:localhost:8000 -R 8005:localhost:8005". Port 8000 is the proxy's port, and 8005 is what the system-under-development should bind to.
+1. SSH to VM with tunnel options. In GCP, this could look like `gcloud compute ssh my-spinnaker-vm -- -L 8000:localhost:8000 -R 8005:localhost:8005`. Port `8000` is the proxy's port, and `8005` is what the system-under-development should bind to.
 
 1. `sudo apt-get install nginx`
 
-1. `sudo ln -s \`pwd\`/etc/nginx/sites-enabled/dev-proxy.conf /etc/nginx/sites-enabled/`
+1. ``sudo ln -s \`pwd\`/etc/nginx/sites-enabled/dev-proxy.conf /etc/nginx/sites-enabled/``
 
-1. `sudo nginx -t && sudo service nginx restart`
+1. ``sudo nginx -t && sudo service nginx restart``
 
 1. Sanity check: `curl localhost:8000/clouddriver/credentials` or `curl localhost:8000/orca/health`
 
