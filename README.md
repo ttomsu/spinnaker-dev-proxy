@@ -18,11 +18,13 @@ As with most solutions in computer science, the solution is to add another layer
 	gcloud compute ssh my-spinnaker-vm -- -L 8000:localhost:8000 -R 8005:localhost:8005
 	```
 
+1. From the home directory, clone this repo: `git clone https://github.com/ttomsu/spinnaker-dev-proxy.git dev/spinnaker-dev-proxy && cd dev/spinnaker-dev-proxy`
+
 1. `sudo apt-get install nginx`
 
-1. ``sudo ln -s`pwd`/etc/nginx/sites-enabled/dev-proxy.conf /etc/nginx/sites-enabled/``
+1. ``sudo ln -s `pwd`/etc/nginx/sites-enabled/dev-proxy.conf /etc/nginx/sites-enabled/``
 
-1. ``sudo nginx -t && sudo service nginx restart``
+1. ``sudo nginx -t && sudo nginx -s reload``
 
 1. Sanity check: `curl localhost:8000/clouddriver/credentials` or `curl localhost:8000/orca/health`
 
