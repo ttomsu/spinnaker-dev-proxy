@@ -17,15 +17,15 @@ As with most solutions in computer science, the solution is to add another layer
 
 1. `sudo apt-get install nginx`
 
-1. ``sudo ln -s \`pwd\`/etc/nginx/sites-enabled/dev-proxy.conf /etc/nginx/sites-enabled/``
+1. ``sudo ln -s`pwd/etc/nginx/sites-enabled/dev-proxy.conf /etc/nginx/sites-enabled/``
 
 1. ``sudo nginx -t && sudo service nginx restart``
 
 1. Sanity check: `curl localhost:8000/clouddriver/credentials` or `curl localhost:8000/orca/health`
 
-1. `ln -s \`pwd\`/hal/default/service-settings/* $HOME/.hal/default/service-settings/`
+1. ``ln -s `pwd`/hal/default/service-settings/* $HOME/.hal/default/service-settings/``
 
-1. `ln -s \`pwd\`/hal/default/profiles/* $HOME/.hal/default/profiles/`
+1. ``ln -s `pwd`/hal/default/profiles/* $HOME/.hal/default/profiles/``
 
 1. Relaunch all services: `hal deploy apply`. Once all services are back up, you should be able to see all traffic between all services in the `/var/log/nginx/access.log` file.
 
@@ -37,7 +37,7 @@ On your local workstation, you should now be able to navigate to `http://localho
 
 1. On the VM, edit `./etc/nginx/sites-enabled/dev-proxy.conf`. Comment out the existing `proxy_pass` entry of the service-under-development (**SUD**), and uncomment the entry that `proxy_pass`es to port `8005`
 
-1. Clone this repo to your local workstation. Link a copy of `spinnaker-local.yaml` to your `$HOME/.spinnaker` directory: `mkdir -p $HOME/.spinnaker && ln -s \`pwd\`/hal/default/profiles/spinnaker-local.yaml $HOME/.spinnaker/`
+1. Clone this repo to your local workstation. Link a copy of `spinnaker-local.yaml` to your `$HOME/.spinnaker` directory: ``mkdir -p $HOME/.spinnaker && ln -s `pwd`/hal/default/profiles/spinnaker-local.yaml $HOME/.spinnaker/``
 
 1. Bring up Intellij project for the SUD. Create a new **Run Configuration**
 	1. If you have the paid Intellij version, this Run Configuration can be a Spring Boot one, or
